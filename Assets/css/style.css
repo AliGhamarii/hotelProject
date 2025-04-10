@@ -54,8 +54,10 @@
   position: relative;
 }
 
-.content__details {
-  display: inline-block;
+.content__details img {
+  width: 340px;
+  height: 280px;
+  object-fit: cover;
 }
 
 .content__info {
