@@ -41,9 +41,32 @@
 .app__content {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.content__details {
+  display: inline-block;
+}
+
+.content__info {
+  width: 90%;
+  height: 20vh;
+  background-color: #fff;
+  border-radius: 10px;
+  transform: translateX(15px) translateY(-70px);
+}
+
+@media screen and (min-width: 848px) {
   .app__content {
     grid-template-columns: 1fr 1fr;
   }
