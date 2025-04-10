@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+/* typography */
+html {
+  font-size: 62.5%; /* حالا 1rem = 10px */
+}
+
 /* General layout */
 .app {
   height: 100vh;
@@ -24,7 +29,7 @@
 }
 
 .app__content {
-  background-color: slateblue;
+  background-color: #edf2f7;
 }
 
 @media screen and (min-width: 1024px) {
@@ -37,12 +42,12 @@
 }
 
 /* App content */
-
 .app__content {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 1rem;
+  padding: 2rem 0;
 }
 
 .content {
@@ -58,14 +63,92 @@
   width: 340px;
   height: 280px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .content__info {
   width: 90%;
-  height: 20vh;
+  height: auto;
   background-color: #fff;
   border-radius: 10px;
   transform: translateX(15px) translateY(-70px);
+  box-shadow: 0 3px 6px 0 #0000000d, 0 8px 15px 0 #0000001a;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.info__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.info__header p {
+  color: #718096;
+  justify-content: center;
+  margin-left: 0.5rem;
+}
+
+.info__title p {
+  color: #1a202c;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+
+.info__price {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.info__price p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-right: 0.5rem;
+}
+
+.info__price span {
+  font-size: 1.6rem;
+  color: #718096;
+}
+
+.info__stars {
+  display: flex;
+  align-items: flex-end;
+}
+
+.info__stars p {
+  color: #718096;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-left: 2rem;
+}
+
+.rating {
+  direction: ltr; /* راست به چپ برای چینش ستاره‌ها از راست */
+  display: inline-flex;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  width: 15px;
+  height: 15px;
+  background-image: url("/Assets/images/secondary.svg"); /* ستاره خالی */
+  background-size: cover;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.rating input:checked ~ label,
+.rating input:checked ~ label:hover,
+.rating label:hover,
+.rating label:hover ~ label {
+  background-image: url("/Assets/images/primary.svg"); /* ستاره پر */
 }
 
 @media screen and (min-width: 848px) {
@@ -78,4 +161,13 @@
   .app__content {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+/* badge */
+.badge {
+  color: #285e61;
+  font-weight: 500;
+  background-color: #b2f5ea;
+  border-radius: 18px;
+  padding: 0.2rem;
 }
