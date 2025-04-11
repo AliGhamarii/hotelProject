@@ -34,7 +34,7 @@ html {
 
 @media screen and (min-width: 1024px) {
   .app {
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 300px auto;
   }
   .app__sidebar {
     display: block;
@@ -44,18 +44,19 @@ html {
 /* App content */
 .app__content {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 1rem;
-  padding: 2rem 0;
+  grid-template-columns: auto;
+  gap: 0 1rem;
 }
 
 .content {
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
+  margin-bottom: 3.5rem;
+}
+
+.content__details {
   position: relative;
 }
 
@@ -71,11 +72,13 @@ html {
   height: auto;
   background-color: #fff;
   border-radius: 10px;
-  transform: translateX(15px) translateY(-70px);
   box-shadow: 0 3px 6px 0 #0000000d, 0 8px 15px 0 #0000001a;
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  position: absolute;
+  bottom: -20px;
+  left: 15px;
 }
 
 .info__header {
@@ -151,15 +154,15 @@ html {
   background-image: url("/Assets/images/primary.svg"); /* ستاره پر */
 }
 
-@media screen and (min-width: 848px) {
+@media screen and (min-width: 768px) {
   .app__content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .app__content {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, auto);
   }
 }
 
@@ -170,4 +173,28 @@ html {
   background-color: #b2f5ea;
   border-radius: 18px;
   padding: 0.2rem;
+}
+
+
+/* App title */
+.app__title {
+  grid-column: 1/-1;
+}
+.app__title h2 {
+  font-weight: 400;
+  font-size: 2rem;
+  color: #1a202c;
+  margin: 1rem 0;
+}
+.app__title p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #718096;
+  margin: 1rem 0;
+}
+
+/* container */
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
 }
