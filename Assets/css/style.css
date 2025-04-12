@@ -7,22 +7,26 @@
 
 /* typography */
 html {
-  font-size: 62.5%; /* حالا 1rem = 10px */
+  font-size: 62.5%;
 }
-
+body {
+  background-color: black;
+}
 /* General layout */
 .app {
+  max-width: 1440px;
   height: 100vh;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 300px 1fr;
   grid-template-rows: auto 1fr;
   column-gap: 1rem;
 }
 
 .app__sidebar {
-  background-color: slategrey;
+  background-color: #2d3748;
   grid-row: 1/-1;
-  display: none;
+  display: block;
 }
 .app__navbar {
   background-color: darkgray;
@@ -30,6 +34,7 @@ html {
 
 .app__content {
   background-color: #edf2f7;
+  height: 100vh;
 }
 
 @media screen and (min-width: 1024px) {
@@ -49,11 +54,7 @@ html {
 }
 
 .content {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 3.5rem;
+  margin: 2.5rem auto;
 }
 
 .content__details {
@@ -61,8 +62,8 @@ html {
 }
 
 .content__details img {
-  width: 340px;
-  height: 280px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -175,7 +176,6 @@ html {
   padding: 0.2rem;
 }
 
-
 /* App title */
 .app__title {
   grid-column: 1/-1;
@@ -193,8 +193,52 @@ html {
   margin: 1rem 0;
 }
 
-/* container */
-.container{
-  max-width: 1280px;
-  margin: 0 auto;
+/* sidebar */
+
+/* sidebar-header */
+.sidebar__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a202c;
+  color: #fff;
+  padding: 2rem 0;
+  height: 80px;
+}
+.sidebar__header img {
+  width: 45px;
+  margin-right: 0.6rem;
+}
+.sidebar__header p {
+  font-size: 2.5rem;
+  position: relative;
+  top: 0.5rem;
+}
+.sidebar__header span {
+  color: #a3bffa;
+}
+/* sidebar-filter */
+.sidebar__filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  color: #a0aec0;
+  font-weight: 500;
+  font-size: 1.4rem;
+  padding: 1.5rem;
+}
+.filters__items {
+  display: flex;
+  flex-direction: column;
+}
+.filters__items div {
+  border: 1px solid #4a5568;
+  background-color: #4a5568;
+  border-radius: 10px;
+  width: 100%;
+  height: 3.5rem;
+  margin: 0.7rem 0;
+}
+.filters__items:last-child {
+  grid-column: 1/ -1;
 }
