@@ -1,5 +1,7 @@
 /* css reset */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -226,6 +228,7 @@ body {
   font-weight: 500;
   font-size: 1.4rem;
   padding: 1.5rem;
+  border-bottom: 1px solid #1A202C;
 }
 .filters__items {
   display: flex;
@@ -241,4 +244,49 @@ body {
 }
 .filters__items:last-child {
   grid-column: 1/ -1;
+}
+.items__input {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+/* sidebar location */
+
+.sidebar__location {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4.5rem;
+  height: 100px;
+  gap: 2rem;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+.location__items::before {
+  position: absolute;
+  left: 1rem;
+  width: 15px;
+  height: 15px;
+  content: "";
+  box-shadow: 0 0 0 2px #1a202c;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: #1a202c;
+  transform: translateY(-10%);
+}
+
+.location__items.selected::before {
+  border: 8px solid #667eea;
+  background-color: #fff;
+  height: 26px;
+  width: 26px;
+}
+
+.sidebar__location h2 {
+  font-weight: 500;
+  color: #a0aec0;
+  font-size: 1.4rem;
 }
